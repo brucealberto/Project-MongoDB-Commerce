@@ -1,7 +1,5 @@
-const dbProdutos = db.produtos.countDocuments({});
-
 db.resumoProdutos.insertOne(
-    { franquia: "McDonalds", totalProdutos: dbProdutos }, 
+    { franquia: "McDonalds", totalProdutos: db.produtos.count() }, 
 );
 
 db.resumoProdutos.find(
